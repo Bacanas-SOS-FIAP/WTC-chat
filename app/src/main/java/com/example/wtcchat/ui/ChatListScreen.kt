@@ -43,7 +43,9 @@ data class Chat(val contactName: String, val lastMessage: String, val timestamp:
 @Composable
 fun ChatListScreen(navController: NavController) {
     ChatListLayout(
-        onChatClick = { /* TODO: navController.navigate("chat/${it.contactName}") */ },
+        onChatClick = { chat ->
+            navController.navigate("chat/${chat.contactName}")
+        },
         onSettingsClick = { /* TODO: navController.navigate("settings") */ },
         onNewContactClick = { /* TODO: Add new contact logic */ }
     )
